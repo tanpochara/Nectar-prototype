@@ -15,6 +15,7 @@ import { IoMdAddCircleOutline } from "react-icons/io";
 import { Patient } from "../../src/@types/patient";
 import { InfoBox } from "../../src/components/InfoBox";
 import { apiEndpoints } from "../../src/config";
+import { getAllPatient, getPatient } from "../../src/utils/fetchPatient";
 
 interface Props {
   patient: Patient;
@@ -87,8 +88,9 @@ const PatientLanding: NextPage<Props> = ({ patient }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const resp = await fetch(`${apiEndpoints}/api/getAllPatient`);
-  const patientData = await resp.json();
+  // const resp = await fetch(`${apiEndpoints}/api/getAllPatient`);
+  // const patientData = await resp.json();
+  const patientData = await getAllPatient();
   const paths = patientData.slug.map((slug: string) => {
     return { params: { name: slug } };
   });
@@ -107,8 +109,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   }
 
-  const resp = await fetch(`${apiEndpoints}/api/getPatient/${name}`);
-  const patient = await resp.json();
+  // const resp = await fetch(`${apiEndpoints}/api/getPatient/${name}`);
+  // const patient = await resp.json();
+  const patient = await getPatient(name as string);
 
   return {
     props: {

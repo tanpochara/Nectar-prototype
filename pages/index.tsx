@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { Patient } from "../src/@types/patient";
 import { apiEndpoints } from "../src/config";
+import { getAllPatient } from "../src/utils/fetchPatient";
 
 interface Props {
   patients: Patient[];
@@ -39,8 +40,9 @@ const Home: NextPage<Props> = ({ patients, paths }) => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const resp = await fetch(`${apiEndpoints}/api/getAllPatient`);
-  const patient = await resp.json();
+  // const resp = await fetch(`${apiEndpoints}/api/getAllPatient`);
+  // const patient = await resp.json();
+  const patient = await getAllPatient();
 
   return {
     props: {
