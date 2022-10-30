@@ -217,4 +217,13 @@ export const patientData: Patient[] = [
     current_medication: "No",
     emergency_contact: "0816213565",
   },
+  {
+    Timestamp: "10/21/2022 20:13:42",
+    name: "Example Patient",
+    blood_group: "x",
+    underlying_disease: "x",
+    allergy: "x",
+    current_medication: "x",
+    emergency_contact: "x",
+  },
 ];

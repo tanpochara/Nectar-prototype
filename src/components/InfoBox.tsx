@@ -13,8 +13,8 @@ export const InfoBox: React.FC<Props> = ({ title, description, path }) => {
   return (
     <Box
       w="100%"
-      cursor="pointer"
-      onClick={() => router.push(path)}
+      // cursor="pointer"
+      // onClick={() => router.push(path)}
       p="20px"
       borderRadius="12px"
       bgColor="#F2F3F4"
@@ -22,7 +22,7 @@ export const InfoBox: React.FC<Props> = ({ title, description, path }) => {
     >
       <Flex direction="row" justifyContent="space-between" alignItems="center">
         <Box>
-          <Text fontSize="lg" fontWeight="700">
+          <Text fontSize="md" fontWeight="700">
             {" "}
             {title}
           </Text>
@@ -31,7 +31,7 @@ export const InfoBox: React.FC<Props> = ({ title, description, path }) => {
           </Text>
         </Box>
 
-        <IoMdAddCircleOutline color="#f85151" fontSize="50px" />
+        {/* <IoMdAddCircleOutline color="#f85151" fontSize="50px" /> */}
       </Flex>
     </Box>
   );
